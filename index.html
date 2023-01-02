@@ -1,0 +1,203 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="sha1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+<script>
+var audio = new Audio("background.mp3");
+
+$(function() {
+    $(':input').keyup(go);
+});
+
+function go(){
+switch ( sha1($('#ttext').val()) ){  //Authentication
+case "813718f91df4d5b58b1a2c0c1967b8b83ab6949f":
+case "3f5d24505781f4b81be6d198664a290785934e6b":
+case "194a22aa5a4741ab1523c19dbdd68705fc3f4154":
+case "bf8aab36f476e67d6a6c8670c5efb54e3a1f3100":
+case "89f1bdb1ae00f39207431045b83c50b181b1a461":
+  audio.play();
+
+$(".vertical-center").css({display: "none"})
+
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+setTimeout(function(){
+
+document.querySelectorAll('.step').forEach((item)=>{
+item.style.display = 'block';
+})
+
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1,
+    easing: "easeOutExpo",
+    delay: 0
+  })
+  .add({
+    targets: '#step1',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step2',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step3',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step4',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step5',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step6',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step7',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step8',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 4250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  })
+  .add({
+    targets: '#step9',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 14250,
+    delay: (el, i) => 300 * (i+1)
+  });
+}, 3000
+)
+
+  break;
+}
+}
+</script>
+</head>
+<body>
+<div class="vertical-center">
+<input id="ttext" placeholder="Your first name"><br>
+</div>
+
+<h1 id="step1" class="ml3 vertical-center step"></h1>
+<h1 id="step4" class="ml3 vertical-center step"></h1>
+<h1 id="step5" class="ml3 vertical-center step"></h1>
+<h1 id="step6" class="ml3 vertical-center step"></h1>
+<h1 id="step7" class="ml3 vertical-center step"></h1>
+<h1 id="step8" class="ml3 vertical-center step"></h1>
+<h1 id="step2" class="ml3 vertical-center step"><img src="photo.jpg"></h1>
+<h1 id="step3" class="ml3 vertical-center step"><img src="photo2.jpg"></h1>
+<div id="step9" class="ml3 vertical-center step"><a href="file.pdf" download="file.pdf">Click here</a><h4>And watch out in your Downloads</h4></div>
+
+</body>
+<script>
+var textWrapper = document.querySelector('.ml3');
+
+document.querySelectorAll('.step').forEach((item)=>{
+item.style.display = 'none';
+
+})
+
+</script>
+</html>
